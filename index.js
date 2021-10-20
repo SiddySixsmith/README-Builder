@@ -6,37 +6,37 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
     {
         type: "input",
-        message: "What is your project title",
+        message: "What is your project title?",
         name: "project",
     },
     {
         type: "input",
-        message: "What is the instalation instructions",
+        message: "What is the instalation instructions?",
         name: "install",
     },
     {
         type: "input",
-        message: "What is the usage instructions",
+        message: "What is the usage instructions?",
         name: "usage",
     },
     {
         type: "input",
-        message: "Enter credits for your project",
+        message: "Enter credits for your project?",
         name: "credit",
     },
     {
         type: "input",
-        message: "What is the description of your project",
+        message: "What is the description of your project?",
         name: "description",
     },
     {
         type: "input",
-        message: "What is your modivation",
+        message: "What was your modivation?",
         name: "modivation",
     },
     {
         type: "input",
-        message: "Why did you build this project",
+        message: "Why did you build this project?",
         name: "build",
     },
     {
@@ -46,12 +46,17 @@ const questions = [
     },
     {
         type: "input",
+        message: "video locations of testing",
+        name: "video",
+    },
+    {
+        type: "input",
         message: "link to code",
         name: "code",
     },
     {
         type: "list",
-        message: "What licence would you like",
+        message: "What licence applies to you?",
         choices: [
             'Apache License 2.0',
             'GNU General Public License v3.0',
@@ -62,7 +67,7 @@ const questions = [
     },
     {
         type: "input",
-        message: "Wan to contrubite?",
+        message: "Want to contrubite?",
         name: "contribute",
     },
     {
