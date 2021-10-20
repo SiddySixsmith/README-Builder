@@ -1,29 +1,59 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  
-}
+const licenseInfo = [
+  {
+    name: "Apache License 2.0",
+    link: "https://www.apache.org/licenses/LICENSE-2.0",
+  },
+  {
+    name: "GNU General Public License v3.0",
+    link: "https://www.gnu.org/licenses/gpl-3.0.en.html",
+  },
+  {
+    name: "MIT License",
+    link: "https://choosealicense.com/licenses/mit/",
+  },
+  {
+    name: "BSD T-Clause 'Simplified' License",
+    link: "https://opensource.org/licenses/BSD-2-Clause",
+  },
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+];
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(response)  {
+function generateMarkdown(response) {
+  let licenseResponse = response.license.replace(/ /g, "%25");
+  let licenseURL = "";
 
+  for (var i = 0; i < licenseInfo.length; i++) {
+    if (response.license === licenseInfo[i].name) {
+      licenseURL = licenseInfo[i].link;
+    }
+  }
   return `
-  # ${response.project}
+  # ${response.project}\n ![GitHub license](https://img.shields.io/badge/license-${licenseResponse}-blue.svg)
+  
+<p align="center">
+  <a href=${response.code}><strong>Explore the docs »</strong></a>
+  .
+  <a href=${response.demo}>View Demo</a>
+</p>
 
   ## Description
   ${response.description}
+
+  ## Table of Contents
   
-  - What was your modivation?
-  ${response.modivation}\n
-  - Why did you build this project?
+  * [About The Project](#about-the-project)
+  * [Modivation](#what-was-your-modivation)
+  * [Installation](#Installation)
+  * [Usage](#usage)
+  * [Credits](#credits)
+  * [License](#license)
+  * [Testing](#testing)
+  * [Questions](#questions)
+    
+  ## About the project
+
+  ### - Why did you build this project?
   ${response.build}\n
 
 
@@ -37,11 +67,19 @@ function generateMarkdown(response)  {
   ${response.credit}
 
  ## License
- ${response.license}
+ Copyright (c) [2021] \n
+ The license is ${response.license} \n
+ Read more about it at ${licenseURL}.
 
- ## Live Demo and Code
- ${response.demo}
- ${response.code}
+ ## Contrubuting Guidelines
+  ${response.contribute}
+
+ ## Testing
+${response.image}
+
+ ## Questions
+ If you have any questions or issues with this application please feel free let me know on my profile 
+ [issues](https://github.com/${response.github}) or email <${response.email}>
 `;
 }
 

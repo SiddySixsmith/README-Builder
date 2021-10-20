@@ -41,8 +41,8 @@ const questions = [
     },
     {
         type: "input",
-        message: "Link to live demo",
-        name: "demo",
+        message: "image locations of testing",
+        name: "image",
     },
     {
         type: "input",
@@ -57,9 +57,13 @@ const questions = [
             'GNU General Public License v3.0',
             'MIT License',
             "BSD T-Clause 'Simplified' License",
-            "Creative Commons Zero v1.0 Universal",
         ],
         name: "license"
+    },
+    {
+        type: "input",
+        message: "Wan to contrubite?",
+        name: "contribute",
     },
     {
         type: "input",
@@ -79,7 +83,7 @@ async function init() {
     .then ((response) => { 
     const data = generateMarkdown(response);
     console.log(data);
-    fs.writeFileSync("README.md", data);
+    fs.writeFileSync(`${response.project}-README.md`, data);
         console.log("Successfully written responses to README.md");
   });
 } 
