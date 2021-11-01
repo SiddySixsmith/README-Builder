@@ -88,7 +88,7 @@ async function init() {
     .then ((response) => { 
     const data = generateMarkdown(response);
     console.log(data);
-    fs.writeFileSync(`${response.project}-README.md`, data);
+    fs.writeFileSync(`README.md`, data);
         console.log("Successfully written responses to README.md");
   });
 } 
