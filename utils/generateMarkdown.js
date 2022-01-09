@@ -13,7 +13,7 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.`
+limitations under the License.`,
   },
   {
     name: "GNU General Public License v3.0",
@@ -29,7 +29,7 @@ limitations under the License.`
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.`
+    along with this program.`,
   },
   {
     name: "MIT License",
@@ -54,7 +54,7 @@ limitations under the License.`
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.`
+    SOFTWARE.`,
   },
   {
     name: "BSD T-Clause 'Simplified' License",
@@ -73,10 +73,8 @@ limitations under the License.`
     OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
     PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
     OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-    EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`
+    EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`,
   },
-
-
 ];
 
 function generateMarkdown(response) {
@@ -93,7 +91,7 @@ function generateMarkdown(response) {
   # ${response.project}\n ![GitHub license](https://img.shields.io/badge/license-${licenseResponse}-blue.svg)
   
 <p align="center">
-  <a href=${response.code}><strong>Explore the docs »</strong></a>
+  <a href=${response.code}><strong>Explore the docs »</strong></a><a href=${response.live}><strong>Explore deployment »</strong></a>
 </p>
 
   ## Description
@@ -110,17 +108,16 @@ function generateMarkdown(response) {
   * [Testing](#testing)
   * [Questions](#questions)
     
-  ## About the project
-
-  ### - Why did you build this project?
-  ${response.build}\n
-
+  ## About the project  
 
   ## Installation
   ${response.install}
 
   ## Usage
   ${response.usage}
+
+  # Technologies
+  ${response.technologies}
 
   ## Credits 
   ${response.credit}
